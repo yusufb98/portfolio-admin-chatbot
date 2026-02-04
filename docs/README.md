@@ -1,120 +1,120 @@
-# YusuPortfolyo - Proje Dokümantasyonu
+# YusuPortfolyo - Project Documentation
 
-## Genel Bakış
+## Overview
 
-Bu proje, admin paneli ve interaktif chatbot içeren modern, minimal ve profesyonel bir portfolyo web sitesidir. Robotik ve Bilgisayarlı Görü mühendisi temalı içerik ile hazırlanmıştır.
+This project is a modern, minimal, and professional portfolio website that includes an admin panel and an interactive chatbot. It is built around a Robotics & Computer Vision themed profile.
 
-## Tasarım Felsefesi
+## Design Philosophy
 
-- **Minimal & Profesyonel** - Glassmorphism yok, temiz çizgiler
-- **Nötr Renk Paleti** - Siyah/beyaz/gri tonları, emerald vurgu
-- **Smooth Animasyonlar** - Framer Motion ile hassas geçişler
-- **Responsive** - Tüm ekran boyutlarına uyumlu
+- **Minimal & Professional** - No glassmorphism, clean lines
+- **Neutral Color Palette** - Black/white/gray tones with an emerald accent
+- **Smooth Animations** - Precise transitions with Framer Motion
+- **Responsive** - Works across all screen sizes
 
-## Teknoloji Stack
+## Tech Stack
 
 ### Backend
 - **Node.js** - Runtime
 - **Express.js** (v4.18.2) - Web framework
-- **better-sqlite3** - SQLite veritabanı
+- **better-sqlite3** - SQLite database
 - **JWT** - Authentication
-- **bcryptjs** - Şifre hashleme
-- **multer** - Dosya yükleme
+- **bcryptjs** - Password hashing
+- **multer** - File uploads
 
 ### Frontend
 - **React 18** - UI framework
 - **Vite 5** - Build tool
-- **Tailwind CSS 3.4** - Styling (minimal neutral tema)
-- **Framer Motion** - Animasyonlar
+- **Tailwind CSS 3.4** - Styling (minimal neutral theme)
+- **Framer Motion** - Animations
 - **Zustand** - State management
 - **React Router v6** - Routing
 - **Axios** - HTTP client
-- **React Hot Toast** - Bildirimler
-- **React Icons** - İkonlar
+- **React Hot Toast** - Notifications
+- **React Icons** - Icons
 
-## Proje Yapısı
+## Project Structure
 
 ```
 YusuPortfolyo/
-├── client/                 # Frontend React uygulaması
-│   ├── public/            # Statik dosyalar
+├── client/                 # Frontend React app
+│   ├── public/            # Static files
 │   ├── src/
-│   │   ├── components/    # UI bileşenleri
+│   │   ├── components/    # UI components
 │   │   │   └── Chatbot/   # Chatbot widget
-│   │   ├── pages/         # Sayfa bileşenleri
-│   │   │   └── admin/     # Admin panel sayfaları
-│   │   ├── services/      # API servisleri
+│   │   ├── pages/         # Pages
+│   │   │   └── admin/     # Admin panel pages
+│   │   ├── services/      # API services
 │   │   ├── store/         # Zustand store
-│   │   ├── App.jsx        # Ana uygulama
+│   │   ├── App.jsx        # Main app
 │   │   ├── main.jsx       # Entry point
-│   │   └── index.css      # Global stil sistemi
-│   ├── tailwind.config.js # Tailwind konfigürasyonu
+│   │   └── index.css      # Global styling system
+│   ├── tailwind.config.js # Tailwind configuration
 │   └── package.json
-├── server/                 # Backend Node.js uygulaması
-│   ├── database/          # Veritabanı
-│   │   ├── db.js          # Bağlantı
+├── server/                 # Backend Node.js app
+│   ├── database/          # Database
+│   │   ├── db.js          # Connection
 │   │   └── init.js        # Schema & seed
 │   ├── middleware/        # Express middleware
 │   ├── routes/            # API routes
-│   ├── uploads/           # Yüklenen dosyalar
+│   ├── uploads/           # Uploaded files
 │   ├── server.js          # Entry point
 │   └── package.json
-├── docs/                   # Dokümantasyon
-│   ├── README.md          # Bu dosya
-│   ├── DESIGN_SYSTEM.md   # Tasarım sistemi
+├── docs/                   # Documentation
+│   ├── README.md          # This file
+│   ├── DESIGN_SYSTEM.md   # Design system
 │   ├── endpoints/         # API endpoint docs
-│   └── modules/           # Modül açıklamaları
+│   └── modules/           # Module notes
 └── package.json           # Root package
 ```
 
-## Özellikler
+## Features
 
 ### Public Site
-- ✅ Hero section (typing animasyonu, grid pattern arka plan)
-- ✅ Hakkımda bölümü (profil bilgileri, iletişim kartları)
-- ✅ Yetenekler (kategoriye göre filtreleme, progress bar animasyonu)
-- ✅ Projeler (filtreleme, modal detay, önceki/sonraki navigasyon)
-- ✅ İletişim formu (validasyon, toast bildirimleri)
-- ✅ Footer (hızlı linkler, yukarı çık butonu)
-- ✅ Dark/Light tema geçişi (animasyonlu toggle)
-- ✅ Smooth scroll navigasyon
-- ✅ SEO optimizasyonu (dinamik sayfa title)
-- ✅ Responsive minimal tasarım
-- ✅ CV indirme
+- ✅ Hero section (typing animation, grid pattern background)
+- ✅ About section (profile information, contact cards)
+- ✅ Skills (category filtering, progress bar animation)
+- ✅ Projects (filtering, detail modal, previous/next navigation)
+- ✅ Contact form (validation, toast notifications)
+- ✅ Footer (quick links, back-to-top button)
+- ✅ Dark/Light theme switch (animated toggle)
+- ✅ Smooth scroll navigation
+- ✅ SEO optimization (dynamic page title)
+- ✅ Responsive minimal design
+- ✅ CV download
 
 ### Admin Panel
-- ✅ JWT authentication ile güvenli giriş
-- ✅ Dashboard (istatistikler, son mesajlar, hızlı işlemler)
-- ✅ Profil yönetimi (avatar, CV yükleme)
-- ✅ Proje yönetimi (CRUD, sıralama, öne çıkarma)
-- ✅ Yetenek yönetimi (CRUD, kategorilendirme)
-- ✅ Chatbot yönetimi (ayarlar, soru-cevap)
-- ✅ Mesaj yönetimi (okuma, silme)
-- ✅ Site ayarları (sayfa başlığı, şifre değiştirme, SEO, tema)
+- ✅ Secure login with JWT authentication
+- ✅ Dashboard (stats, recent messages, quick actions)
+- ✅ Profile management (avatar, CV upload)
+- ✅ Project management (CRUD, ordering, featuring)
+- ✅ Skill management (CRUD, categorization)
+- ✅ Chatbot management (settings, Q&A)
+- ✅ Message management (read, delete)
+- ✅ Site settings (page title, change password, SEO, theme)
 
 ### Chatbot
-- ✅ Anahtar kelime bazlı yanıtlar
-- ✅ Hoşgeldin mesajı
-- ✅ Fallback mesajı
-- ✅ Yazıyor göstergesi (bounce animasyonu)
-- ✅ Mesaj geçmişi
-- ✅ Sohbet sıfırlama
-- ✅ Admin'den yapılandırılabilir
+- ✅ Keyword-based responses
+- ✅ Welcome message
+- ✅ Fallback message
+- ✅ Typing indicator (bounce animation)
+- ✅ Message history
+- ✅ Reset chat
+- ✅ Configurable from admin panel
 
-## Kurulum
+## Installation
 
 ```bash
-# Root dizinde
+# In the root directory
 npm install
 
-# Server bağımlılıkları
+# Server dependencies
 cd server && npm install
 
-# Client bağımlılıkları
+# Client dependencies
 cd ../client && npm install
 ```
 
-## Çalıştırma
+## Running
 
 ### Development
 ```bash
@@ -134,16 +134,16 @@ cd client && npm run build
 cd ../server && npm start
 ```
 
-## Varsayılan Giriş Bilgileri
+## Default Login Credentials
 
-- **Kullanıcı Adı:** admin
-- **Şifre:** admin123
+- **Username:** admin
+- **Password:** admin123
 
-⚠️ Production'da şifreyi değiştirmeyi unutmayın!
+⚠️ Don’t forget to change the password in production!
 
-## Ortam Değişkenleri
+## Environment Variables
 
-`server/.env` dosyası:
+`server/.env` file:
 ```
 PORT=5000
 JWT_SECRET=your-super-secret-jwt-key-change-in-production

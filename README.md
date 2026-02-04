@@ -1,24 +1,22 @@
 # YusuPortfolyo
 
-Modern, minimal ve çok dilli (i18n) portfolyo websitesi + admin panel + yapılandırılabilir chatbot.
+Modern, minimal, multilingual (i18n) portfolio website with an admin panel and a configurable chatbot.
 
-- Public site: Hakkımda / Yetenekler / Deneyimler / Projeler / İletişim
-- Admin panel: içerik yönetimi (CRUD), mesajlar, ayarlar, çeviriler
-- Backend: Express + SQLite (better-sqlite3) + JWT auth + dosya yükleme
+- Public site: About / Skills / Experiences / Projects / Contact
+- Admin panel: content management (CRUD), messages, settings, translations
+- Backend: Express + SQLite (better-sqlite3) + JWT auth + file uploads
 
-## Canlı
+## Live
 
 - https://yusufbaykan.com
 
-## Ekran Görüntüleri
+## Screenshots
 
 ![Hero](docs/screenshots/hero.png)
-![About](docs/screenshots/about.png)
-![Experiences](docs/screenshots/experiences.png)
 
 ---
 
-## Teknoloji Yığını
+## Tech Stack
 
 **Frontend**: React 18, Vite, TailwindCSS, Framer Motion, Zustand, React Router, Axios
 
@@ -26,7 +24,7 @@ Modern, minimal ve çok dilli (i18n) portfolyo websitesi + admin panel + yapıla
 
 ---
 
-## Proje Yapısı
+## Project Structure
 
 ```
 .
@@ -36,42 +34,42 @@ Modern, minimal ve çok dilli (i18n) portfolyo websitesi + admin panel + yapıla
 └─ package.json            # Root script'ler (concurrently)
 ```
 
-Detaylı mimari notları için:
+For detailed architecture notes:
 - docs/README.md
 - docs/endpoints/API.md
 - docs/DESIGN_SYSTEM.md
 
 ---
 
-## Hızlı Başlangıç (Development)
+## Quick Start (Development)
 
-### Gereksinimler
+### Requirements
 
-- Node.js 18+ (önerilir)
+- Node.js 18+ (recommended)
 - npm
 
-### Kurulum
+### Install
 
 ```bash
 npm run install:all
 ```
 
-### Ortam değişkenleri (Backend)
+### Environment Variables (Backend)
 
-`server/.env` dosyasını oluştur:
+Create `server/.env`:
 
 ```bash
 cp server/.env.example server/.env
 ```
 
-Minimum gerekli değişkenler:
+Minimum required variables:
 
 - `PORT` (default: `7847`)
-- `JWT_SECRET` (production’da mutlaka değiştir)
+- `JWT_SECRET` (make sure to change in production)
 - `NODE_ENV` (`development` | `production`)
-- `CLIENT_URL` (sadece production CORS için)
+- `CLIENT_URL` (only for production CORS)
 
-### Çalıştırma
+### Run
 
 ```bash
 npm run dev
@@ -81,34 +79,34 @@ npm run dev
 - Backend API: `http://localhost:7847/api`
 - Health check: `http://localhost:7847/api/health`
 
-Not: Frontend, development ortamında `/api` ve `/uploads` isteklerini Vite proxy ile backend’e yönlendirir (client/vite.config.js).
+Note: In development, the frontend proxies `/api` and `/uploads` requests to the backend via Vite proxy (client/vite.config.js).
 
 ---
 
 ## Admin Panel
 
-- Giriş: `http://localhost:8847/admin/login`
+- Login: `http://localhost:8847/admin/login`
 
-Varsayılan giriş bilgileri (ilk kurulumda seed edilir):
-- Kullanıcı adı: `admin`
-- Şifre: `admin123`
+Default credentials (seeded on first setup):
+- Username: `admin`
+- Password: `admin123`
 
-> Production’a çıkmadan önce admin şifresini değiştir.
+> Change the admin password before deploying to production.
 
 ---
 
-## Veritabanı
+## Database
 
-- SQLite dosyası: `server/database/portfolio.db`
-- Şema + seed işlemleri: `server/database/init.js`
+- SQLite file: `server/database/portfolio.db`
+- Schema + seed: `server/database/init.js`
 
-Backend ayağa kalkarken `server/server.js`, `init.js`’i otomatik çağırır ve dosya yoksa oluşturur.
+When the backend starts, `server/server.js` automatically runs `init.js` and creates the database file if it does not exist.
 
 ---
 
 ## Production
 
-Bu projede backend, production modunda frontend build çıktısını da servis eder.
+In this project, the backend also serves the frontend build output in production mode.
 
 ```bash
 npm run build
@@ -116,18 +114,18 @@ npm run build
 cd server && NODE_ENV=production npm start
 ```
 
-Production’da CORS origin kontrolü için `server/.env` içinde `CLIENT_URL` tanımlı olmalı.
+For CORS origin checks in production, `CLIENT_URL` must be defined in `server/.env`.
 
 ---
 
-## API Dokümantasyonu
+## API Documentation
 
-Endpoint listesi: docs/endpoints/API.md
+Endpoint list: docs/endpoints/API.md
 
-Tüm endpoint’ler `/api` prefix’i ile başlar.
+All endpoints are prefixed with `/api`.
 
 ---
 
-## Lisans
+## License
 
 MIT
