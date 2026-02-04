@@ -1,4 +1,4 @@
-# YusuPortfolyo
+# Yusuf Portfolio
 
 Modern, minimal, multilingual (i18n) portfolio website with an admin panel and a configurable chatbot.
 
