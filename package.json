@@ -1,0 +1,20 @@
+{
+  "name": "yusu-portfolyo",
+  "version": "1.0.0",
+  "description": "Modern portfolio website with admin panel and AI chatbot",
+  "scripts": {
+    "install:all": "npm install && cd server && npm install && cd ../client && npm install",
+    "dev": "concurrently \"npm run server:dev\" \"npm run client:dev\"",
+    "start": "concurrently \"npm run server:start\" \"npm run client:dev\"",
+    "server:dev": "cd server && npm run dev",
+    "server:start": "cd server && npm start",
+    "client:dev": "cd client && npm run dev",
+    "build": "cd client && npm run build"
+  },
+  "keywords": ["portfolio", "react", "express", "sqlite", "chatbot"],
+  "author": "Yusuf",
+  "license": "MIT",
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}

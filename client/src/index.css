@@ -1,0 +1,443 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ============================================
+   PROFESSIONAL MINIMAL DESIGN SYSTEM
+   ============================================ */
+
+/* Base Reset */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  @apply font-sans antialiased;
+  @apply bg-white dark:bg-neutral-950;
+  @apply text-neutral-900 dark:text-neutral-100;
+  line-height: 1.6;
+  letter-spacing: -0.01em;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  @apply font-bold tracking-tight;
+  line-height: 1.2;
+}
+
+/* Selection */
+::selection {
+  @apply bg-neutral-900 text-white;
+}
+
+.dark ::selection {
+  @apply bg-white text-neutral-900;
+}
+
+/* Scrollbar - Minimal */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-neutral-300 dark:bg-neutral-700 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-neutral-400 dark:bg-neutral-600;
+}
+
+/* ============================================
+   LAYOUT
+   ============================================ */
+
+.container-custom {
+  @apply max-w-6xl mx-auto px-6 md:px-8 lg:px-12;
+}
+
+.section {
+  @apply py-24 md:py-32;
+}
+
+/* ============================================
+   TYPOGRAPHY UTILITIES
+   ============================================ */
+
+.heading-xl {
+  @apply text-5xl md:text-6xl lg:text-7xl font-bold;
+  letter-spacing: -0.03em;
+}
+
+.heading-lg {
+  @apply text-3xl md:text-4xl lg:text-5xl font-bold;
+  letter-spacing: -0.02em;
+}
+
+.heading-md {
+  @apply text-2xl md:text-3xl font-semibold;
+  letter-spacing: -0.02em;
+}
+
+.heading-sm {
+  @apply text-xl md:text-2xl font-semibold;
+  letter-spacing: -0.01em;
+}
+
+.text-body {
+  @apply text-base md:text-lg text-neutral-600 dark:text-neutral-400;
+  line-height: 1.7;
+}
+
+.text-caption {
+  @apply text-sm text-neutral-500 dark:text-neutral-500;
+  letter-spacing: 0.02em;
+}
+
+.text-overline {
+  @apply text-xs font-medium uppercase tracking-widest;
+  @apply text-neutral-500 dark:text-neutral-500;
+}
+
+/* Accent text */
+.text-accent {
+  @apply text-emerald-600 dark:text-emerald-400;
+}
+
+/* ============================================
+   BUTTONS
+   ============================================ */
+
+.btn {
+  @apply inline-flex items-center justify-center gap-2;
+  @apply px-6 py-3 rounded-lg font-medium;
+  @apply transition-all duration-200 ease-out;
+  @apply focus:outline-none focus:ring-2 focus:ring-offset-2;
+  @apply disabled:opacity-50 disabled:cursor-not-allowed;
+}
+
+.btn-primary {
+  @apply btn;
+  @apply bg-neutral-900 text-white;
+  @apply hover:bg-neutral-800;
+  @apply dark:bg-white dark:text-neutral-900;
+  @apply dark:hover:bg-neutral-100;
+  @apply focus:ring-neutral-900 dark:focus:ring-white;
+}
+
+.btn-secondary {
+  @apply btn;
+  @apply bg-transparent text-neutral-900 dark:text-white;
+  @apply border border-neutral-300 dark:border-neutral-700;
+  @apply hover:bg-neutral-100 dark:hover:bg-neutral-800;
+  @apply focus:ring-neutral-500;
+}
+
+.btn-ghost {
+  @apply btn;
+  @apply bg-transparent text-neutral-600 dark:text-neutral-400;
+  @apply hover:text-neutral-900 dark:hover:text-white;
+  @apply hover:bg-neutral-100 dark:hover:bg-neutral-800;
+}
+
+.btn-icon {
+  @apply p-3 rounded-lg;
+  @apply text-neutral-600 dark:text-neutral-400;
+  @apply hover:bg-neutral-100 dark:hover:bg-neutral-800;
+  @apply hover:text-neutral-900 dark:hover:text-white;
+  @apply transition-colors duration-200;
+}
+
+/* ============================================
+   FORM INPUTS
+   ============================================ */
+
+.input {
+  @apply w-full py-3 px-4;
+  @apply bg-white dark:bg-neutral-800;
+  @apply border border-neutral-300 dark:border-neutral-700;
+  @apply rounded-lg;
+  @apply text-neutral-900 dark:text-white;
+  @apply placeholder-neutral-400 dark:placeholder-neutral-500;
+  @apply focus:outline-none focus:ring-2 focus:ring-neutral-900 dark:focus:ring-white;
+  @apply focus:border-transparent;
+  @apply transition-all duration-200;
+}
+
+/* Input with icon - left padding */
+.input-icon-left {
+  @apply pl-12;
+}
+
+/* Input with icon - right padding */
+.input-icon-right {
+  @apply pr-12;
+}
+
+.input:hover {
+  @apply border-neutral-300 dark:border-neutral-700;
+}
+
+textarea.input {
+  @apply resize-none;
+  min-height: 120px;
+}
+
+.label {
+  @apply block text-sm font-medium text-neutral-700 dark:text-neutral-300 mb-2;
+}
+
+/* ============================================
+   CARDS
+   ============================================ */
+
+.card {
+  @apply bg-white dark:bg-neutral-900;
+  @apply border border-neutral-200 dark:border-neutral-800;
+  @apply rounded-2xl;
+  @apply transition-all duration-300 ease-out;
+}
+
+.card-hover {
+  @apply card;
+  @apply hover:border-neutral-300 dark:hover:border-neutral-700;
+  @apply hover:shadow-xl hover:shadow-neutral-200/50 dark:hover:shadow-neutral-900/50;
+  @apply hover:-translate-y-1;
+}
+
+/* ============================================
+   NAVIGATION
+   ============================================ */
+
+.nav-link {
+  @apply relative px-1 py-2;
+  @apply text-sm font-medium;
+  @apply text-neutral-600 dark:text-neutral-400;
+  @apply hover:text-neutral-900 dark:hover:text-white;
+  @apply transition-colors duration-200;
+}
+
+.nav-link::after {
+  content: '';
+  @apply absolute bottom-0 left-0 w-0 h-0.5;
+  @apply bg-neutral-900 dark:bg-white;
+  @apply transition-all duration-300;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  @apply w-full;
+}
+
+.nav-link.active {
+  @apply text-neutral-900 dark:text-white;
+}
+
+/* ============================================
+   BADGES & TAGS
+   ============================================ */
+
+.badge {
+  @apply inline-flex items-center gap-1.5;
+  @apply px-3 py-1 rounded-full;
+  @apply text-xs font-medium;
+  @apply bg-neutral-100 text-neutral-700;
+  @apply dark:bg-neutral-800 dark:text-neutral-300;
+}
+
+.badge-accent {
+  @apply badge;
+  @apply bg-emerald-100 text-emerald-700;
+  @apply dark:bg-emerald-900/30 dark:text-emerald-400;
+}
+
+.tag {
+  @apply inline-block px-3 py-1;
+  @apply text-xs font-medium;
+  @apply bg-neutral-100 dark:bg-neutral-800;
+  @apply text-neutral-600 dark:text-neutral-400;
+  @apply rounded-md;
+  @apply transition-colors duration-200;
+}
+
+.tag:hover {
+  @apply bg-neutral-200 dark:bg-neutral-700;
+}
+
+/* ============================================
+   PROGRESS & INDICATORS
+   ============================================ */
+
+.progress-bar {
+  @apply h-1.5 rounded-full;
+  @apply bg-neutral-200 dark:bg-neutral-800;
+  overflow: hidden;
+}
+
+.progress-fill {
+  @apply h-full rounded-full;
+  @apply bg-neutral-900 dark:bg-white;
+  @apply transition-all duration-1000 ease-out;
+}
+
+.dot-indicator {
+  @apply w-2 h-2 rounded-full;
+  @apply bg-emerald-500;
+  animation: pulse-dot 2s ease-in-out infinite;
+}
+
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(1.2); }
+}
+
+/* ============================================
+   DIVIDERS & SEPARATORS
+   ============================================ */
+
+.divider {
+  @apply w-full h-px;
+  @apply bg-neutral-200 dark:bg-neutral-800;
+}
+
+.divider-vertical {
+  @apply w-px h-full;
+  @apply bg-neutral-200 dark:bg-neutral-800;
+}
+
+/* ============================================
+   GRID PATTERNS
+   ============================================ */
+
+.grid-pattern {
+  background-image: 
+    linear-gradient(rgba(0,0,0,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,0,0,0.03) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+
+.dark .grid-pattern {
+  background-image: 
+    linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+}
+
+/* ============================================
+   ANIMATIONS
+   ============================================ */
+
+/* Fade animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeDown {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Scale animation */
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+/* Slide animations */
+@keyframes slideInLeft {
+  from { opacity: 0; transform: translateX(-30px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slideInRight {
+  from { opacity: 0; transform: translateX(30px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+/* Animation utilities */
+.animate-fade-in { animation: fadeIn 0.6s ease-out forwards; }
+.animate-fade-up { animation: fadeUp 0.6s ease-out forwards; }
+.animate-fade-down { animation: fadeDown 0.6s ease-out forwards; }
+.animate-scale-in { animation: scaleIn 0.4s ease-out forwards; }
+.animate-slide-left { animation: slideInLeft 0.6s ease-out forwards; }
+.animate-slide-right { animation: slideInRight 0.6s ease-out forwards; }
+
+/* Stagger delays */
+.delay-100 { animation-delay: 100ms; }
+.delay-200 { animation-delay: 200ms; }
+.delay-300 { animation-delay: 300ms; }
+.delay-400 { animation-delay: 400ms; }
+.delay-500 { animation-delay: 500ms; }
+
+/* Hover lift effect */
+.hover-lift {
+  @apply transition-transform duration-300 ease-out;
+}
+.hover-lift:hover {
+  transform: translateY(-4px);
+}
+
+/* ============================================
+   SKELETON LOADING
+   ============================================ */
+
+.skeleton {
+  @apply bg-neutral-200 dark:bg-neutral-800;
+  @apply rounded animate-pulse;
+}
+
+/* ============================================
+   CURSOR BLINK
+   ============================================ */
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.cursor-blink {
+  animation: blink 1s step-end infinite;
+}
+
+/* ============================================
+   RESPONSIVE UTILITIES
+   ============================================ */
+
+@media (max-width: 768px) {
+  .heading-xl {
+    @apply text-4xl;
+  }
+  .heading-lg {
+    @apply text-2xl;
+  }
+  .section {
+    @apply py-16;
+  }
+}
+
+/* ============================================
+   PRINT STYLES
+   ============================================ */
+
+@media print {
+  .no-print {
+    display: none !important;
+  }
+}
