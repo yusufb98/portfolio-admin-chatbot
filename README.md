@@ -83,18 +83,6 @@ Note: In development, the frontend proxies `/api` and `/uploads` requests to the
 
 ---
 
-## Admin Panel
-
-- Login: `http://localhost:8847/admin/login`
-
-Default credentials (seeded on first setup):
-- Username: `admin`
-- Password: `admin123`
-
-> Change the admin password before deploying to production.
-
----
-
 ## Database
 
 - SQLite file: `server/database/portfolio.db`
